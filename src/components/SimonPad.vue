@@ -1,11 +1,11 @@
 <template>
   <section class="flex flex-col justify-center rotate-[-45deg] gap-0">
     <div class="flex">
-      <SimonButton tag="Projects" @click="$emit('navigate', '/projects')" />
-      <SimonButton tag="About" @click="$emit('navigate', '/about')" />
+      <SimonButton tag="Projects" @click="handleClick('/projects')" />
+      <SimonButton tag="About" @click="handleClick('/about')" />
     </div>
     <div class="flex">
-      <SimonButton tag="Contact" @click="$emit('navigate', '/contact')" />
+      <SimonButton tag="Contact" @click="handleClick('/contact')" />
       <SimonButton
         tag="Blog"
         @click="
@@ -13,13 +13,23 @@
         "
       />
     </div>
+    <!-- Center Button should start the Simon Game -->
     <SimonCenterButton />
   </section>
 </template>
 
 <script setup>
+import { defineEmits } from "vue";
+
 import SimonButton from "./SimonButton.vue";
 import SimonCenterButton from "./SimonCenterButton.vue";
+
+const emit = defineEmits(["navigate"]);
+
+function handleClick(link) {
+  // TO-DO: Make simon playable
+  emit("navigate", link);
+}
 </script>
 
 <style scoped></style>
