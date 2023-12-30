@@ -8,7 +8,7 @@
 
 <script setup>
 import { defineProps } from "vue";
-const props = defineProps(["tag"]);
+const props = defineProps(["tag", "link"]);
 </script>
 
 <style scoped></style>

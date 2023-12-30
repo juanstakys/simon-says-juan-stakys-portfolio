@@ -1,12 +1,10 @@
 <template>
-  <div class="flex flex-col items-center">
-    <h1 class="mt-10">Juan Cruz Stakys</h1>
-    <SimonPad class="mt-64" />
-  </div>
+  <nav>
+    <router-link to="/" class="hover:underline hover:italic">Home</router-link>
+  </nav>
+  <section class="text-center">
+    <router-view @navigate="(link) => this.$router.push(link)" />
+  </section>
 </template>
 
-<script setup>
-import SimonPad from "./components/SimonPad.vue";
-</script>
-
-<style scoped></style>
+<style></style>
