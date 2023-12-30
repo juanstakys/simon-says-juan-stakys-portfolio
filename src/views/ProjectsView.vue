@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="flex flex-col items-center">
     <ul>
       <li v-for="index in 10" :key="index">
-        <p>{{ index }}</p>
+        <p>Project {{ index }}</p>
       </li>
     </ul>
   </div>
